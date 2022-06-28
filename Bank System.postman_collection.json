@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "75c0cdbb-7743-4195-9bbf-d9ce96ebbc26",
+		"name": "Bank System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14738661"
+	},
+	"item": [
+		{
+			"name": "Get User Details",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "userDetails example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Jun 2022 06:06:27 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"phone\": \"john\",\n    \"email\": \"john@gmail.com\",\n    \"name\": \"john\",\n    \"accounts\": [\n        {\n            \"accountId\": 1,\n            \"accountNo\": \"1\",\n            \"bankName\": \"axis\",\n            \"bankingServices\": [\n                \"MOBILE_BANKING\",\n                \"CREDIT_CARD\",\n                \"INTERNET_BANKING\"\n            ]\n        },\n        {\n            \"accountId\": 2,\n            \"accountNo\": \"2\",\n            \"bankName\": \"state\",\n            \"bankingServices\": [\n                \"CREDIT_CARD\"\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get BankAccount Details",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "bankDetails example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/bank-account/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bank-account",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Jun 2022 05:17:20 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accountId\": 1,\n    \"accountNo\": \"1\",\n    \"bankName\": \"axis\",\n    \"user\": {\n        \"userId\": 1,\n        \"phone\": \"123\",\n        \"email\": \"john@gmail.com\",\n        \"name\": \"john\"\n    },\n    \"bankingServices\": [\n        \"MOBILE_BANKING\",\n        \"CREDIT_CARD\",\n        \"INTERNET_BANKING\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get BankAccounts from service",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "bankAccount from service example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/bank-account?service=CREDIT_CARD",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bank-account"
+							],
+							"query": [
+								{
+									"key": "service",
+									"value": "CREDIT_CARD"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Jun 2022 05:59:04 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"accountId\": 2,\n        \"accountNo\": \"2\",\n        \"bankName\": \"state\",\n        \"user\": {\n            \"userId\": 1,\n            \"phone\": \"123\",\n            \"email\": \"john@gmail.com\",\n            \"name\": \"john\"\n        },\n        \"bankingServices\": [\n            \"CREDIT_CARD\"\n        ]\n    },\n    {\n        \"accountId\": 3,\n        \"accountNo\": \"3\",\n        \"bankName\": \"dena\",\n        \"user\": {\n            \"userId\": 2,\n            \"phone\": \"456\",\n            \"email\": \"jane@gmail.com\",\n            \"name\": \"jane\"\n        },\n        \"bankingServices\": [\n            \"CREDIT_CARD\"\n        ]\n    }\n]"
+				}
+			]
+		}
+	]
+}
